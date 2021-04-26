@@ -11,9 +11,10 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}
   server:
     enable-self-preservation: false
+    my-url: http://${eureka.instance.hostname}:${server.port}
 
 logging:
   config: classpath:log4j/log4j2-info.yml
