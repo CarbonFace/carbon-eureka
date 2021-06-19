@@ -1,20 +1,21 @@
+carbon_cloud:
+  eureka_address: localhost
 server:
   port: 8008
 spring:
   application:
     name: Carbon-Eureka
-
 eureka:
   instance:
-    hostname: localhost   #dont sure if the host name can change
+    hostname: carbon-eureka   #dont sure if the host name can change
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}
+      defaultZone: http://${carbon_cloud.eureka_address}:${server.port}
   server:
     enable-self-preservation: false
-    my-url: http://${eureka.instance.hostname}:${server.port}
+    my-url: http://${carbon_cloud.eureka_address}:${server.port}
 
 logging:
   config: classpath:log4j/log4j2-info.yml
