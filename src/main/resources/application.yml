@@ -12,7 +12,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${carbon_cloud.eureka_address}:${server.port}
+      defaultZone: http://${carbon_cloud.eureka_address}:${server.port}/eureka/
   server:
     enable-self-preservation: false
     my-url: http://${carbon_cloud.eureka_address}:${server.port}
